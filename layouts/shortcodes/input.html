@@ -1,0 +1,5 @@
+{{ with .Parent }}
+  <input type="{{ default "text" (.Get "type") }}" name="{{.Get "name"}}" placeholder="{{.Get "placeholder"}}">
+{{ else}}
+{{ errorf "input must be used inside googleform tag" }}
+{{ end }}
