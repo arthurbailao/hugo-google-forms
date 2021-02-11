@@ -1,0 +1,6 @@
+{{ if .Parent }}
+  <label for="{{.Get "id"}}">{{.Get "name"}}</label>
+  <input type="{{ default "text" (.Get "type") }}" id="{{.Get "id"}}" name="{{.Get "id"}}" placeholder="{{.Get "placeholder"}}" value="{{.Get "value"}}" class="{{.Get "class"}}" required>
+{{ else}}
+{{ errorf "input must be used inside googleform tag" }}
+{{ end }}
